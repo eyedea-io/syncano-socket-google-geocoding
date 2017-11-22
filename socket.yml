@@ -1,0 +1,45 @@
+name: google-geocoding
+version: 0.0.1
+description: Interface for Google Maps Geocoding API
+url: 'https://github.com/eyedea-io/syncano-socket-google-geocoding'
+keywords:
+  - geolocation
+  - location
+  - coordinates
+  - address
+config:
+  API_KEY:
+    description: Google API key
+    long_description: |
+      To find the API key, go to your Google Developer Console and copy it from
+      "Credentials" section at https://console.cloud.google.com/apis/credentials?project=<your_project>
+    required: true
+endpoints:
+  get-sublocality:
+    description: Get sublocality based on the given coordinates
+    parameters:
+      latitude:
+        type: string
+        description: Latitude
+        example: 
+      longitude:
+        type: string
+        description: Longitude
+        example: 
+    response:
+      success:
+        description: Success
+        parameters:
+          sublocality:
+            type: string
+            description: Name of the sublocality
+            example: Sentrum
+      fail:
+        description: Failed
+        exit_code: 400
+        parameters:
+          message:
+            type: string
+            description: Message
+            example: City not found
+  
