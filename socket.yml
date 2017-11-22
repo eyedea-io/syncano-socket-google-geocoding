@@ -1,5 +1,5 @@
 name: google-geocoding
-version: 0.0.1
+version: 0.0.2
 description: Interface for Google Maps Geocoding API
 url: 'https://github.com/eyedea-io/syncano-socket-google-geocoding'
 keywords:
@@ -10,9 +10,11 @@ keywords:
 config:
   API_KEY:
     description: Google API key
-    long_description: |
+    long_description: >
       To find the API key, go to your Google Developer Console and copy it from
-      "Credentials" section at https://console.cloud.google.com/apis/credentials?project=<your_project>
+
+      "Credentials" section at
+      https://console.cloud.google.com/apis/credentials?project=<your_project>
     required: true
 endpoints:
   get-sublocality:
@@ -21,11 +23,11 @@ endpoints:
       latitude:
         type: string
         description: Latitude
-        example: 
+        example: null
       longitude:
         type: string
         description: Longitude
-        example: 
+        example: null
     response:
       success:
         description: Success
@@ -42,4 +44,3 @@ endpoints:
             type: string
             description: Message
             example: City not found
-  
