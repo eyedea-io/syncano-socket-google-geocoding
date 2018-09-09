@@ -1,0 +1,44 @@
+name: google-geocoding
+
+config:
+  API_KEY:
+    description: Google API key
+    long_description: >-
+      To find the API key, go to your Google Developer Console and copy it from
+      the "Credentials" section at
+      https://console.cloud.google.com/apis/credentials?project=<your_project>
+    required: true
+
+endpoints:
+  get-sublocality:
+    description: Get sublocality based on the given coordinates
+    inputs:
+      properties:
+        latitude:
+          type: string
+          description: Latitude
+          examples:
+            - '59.914620299999996'
+        longitude:
+          type: string
+          description: Longitude
+          examples:
+            - '10.731760'
+    outputs:
+      success:
+        description: Success
+        properites:
+          sublocality:
+            type: string
+            description: Name of the sublocality
+            examples:
+              - Sentrum
+      fail:
+        description: Failed
+        exit_code: 400
+        properties:
+          message:
+            type: string
+            description: Message
+            examples:
+              - City not found
