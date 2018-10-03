@@ -1,4 +1,6 @@
 name: google-geocoding
+description: Socket for geocoding Google API
+version: 0.0.1
 
 config:
   API_KEY:
