@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@eyedea/syncano": "0.2.0",
-    "axios": "^0.18.0"
+    "axios": "^1.6.0"
   },
   "scripts": {
     "build": "npm run build:src && npm run build:env",
